@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تحدي بسيييط يا اروع مبرمجين !</title>
+  <style>
+    body {
+      font-family: "Tahoma";
+      direction: rtl;
+      text-align: center;
+      margin: 40px;
+      background: #112F40; /* خلفية داكنة */
+      color: #ffffff; /* النص الافتراضي أبيض */
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    header img {
+      height: 100px;
+    }
+    header h1 {
+      font-size: 28px;
+      color: #1FC1DF; /* عنوان باللون الأزرق الفاتح */
+    }
+    img.code {
+      max-width: 600px;
+      border: 2px solid #2896DD; /* إطار الصورة أزرق متوسط */
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    p.question {
+      color: #ffffff; /* أسئلة باللون الأبيض */
+      font-size: 20px;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      border: 1px solid #1FC1DF;
+      border-radius: 5px;
+      color: #112F40;
+    }
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #2896DD; /* زر أزرق متوسط */
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #1FC1DF; /* hover أزرق فاتح */
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .prize {
+      margin-top: 30px;
+      background: #ffffff; /* خلفية الجائزة أبيض */
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #2896DD;
+      display: none;
+      color: #112F40;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo1.jpeg" alt="شعار النادي">
+    <h1>تحدي بسيط يا اروع مبرمجين 🎉</h1>
+  </header>
+
+  <p class="question">اقرأ الكود في الصورة وحاول تجاوب 👇</p>
+
+  <img src="code.png" alt="الكود" class="code">
+
+  <p class="question">ما النص الذي يطبعه الكود في النهاية؟</p>
+  <input type="text" id="answer" placeholder="اكتب إجابتك هنا">
+  <button onclick="checkAnswer()">إرسال</button>
+
+  <p id="result"></p>
+
+  <div class="prize" id="prizeBox">
+    🎁 مبروووك! هذه جائزتك: <br>
+    <strong>>حصلت على كود خصم خييالي في متجر كين|Keen اضغط الرابط التالي https://salla.sa/keen.com وقبل اتمام الطلب استخدم كود Aiclub وعلييك بالعافية!  🚀<</strong>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      let ans = document.getElementById("answer").value.trim();
+      if(ans === "دام عزك يا وطن"){
+        document.getElementById("result").innerText = "إجابة صحيحة ✅";
+        document.getElementById("result").style.color = "#1FC1DF"; // النص بعد الإجابة صحيحة أزرق فاتح
+        document.getElementById("prizeBox").style.display = "block";
+      } else {
+        document.getElementById("result").innerText = "إجابة خاطئة ❌";
+        document.getElementById("result").style.color = "#FF5555"; // نص أحمر للخطأ
+        document.getElementById("prizeBox").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
